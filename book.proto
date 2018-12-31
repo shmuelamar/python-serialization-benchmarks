@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+package Books;
+
+
+message Book {
+  required string title = 1;
+  required string author = 2;
+  required uint32 sales = 3;
+  required bool is_published = 4;
+
+  repeated string languages = 5;
+
+  message Review {
+    required string author = 1;
+    required string comment = 2;
+  }
+
+  repeated Review reviews = 6;
+
+  required double price = 7;
+}
